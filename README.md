@@ -2,7 +2,7 @@
 
 Milestone-based teacher training crowdfunding where Stellar escrow unlocks grants after verified learning outcomes.
 
-Former project name: Teacher Crowdfunded Professional Development
+
 
 ## Problem
 
