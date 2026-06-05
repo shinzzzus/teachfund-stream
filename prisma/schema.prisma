@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model PaymentRecord {
+  id          Int      @id @default(autoincrement())
+  externalId  String   @unique
+  projectName String
+  owner       String
+  target      Int
+  status      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  transactions Transaction[]
+}
+
+model Transaction {
+  id              Int      @id @default(autoincrement())
+  paymentRecordId Int
+  hash            String   @unique
+  action          String
+  amount          Int
+  createdAt       DateTime @default(now())
+  paymentRecord   PaymentRecord @relation(fields: [paymentRecordId], references: [id])
+}

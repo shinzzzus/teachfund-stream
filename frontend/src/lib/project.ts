@@ -1,0 +1,20 @@
+export const project = {
+  name: "TeachFund Stream",
+  oldName: "Teacher Crowdfunded Professional Development",
+  slug: "teachfund-stream",
+  track: "Track 5 Social Impact",
+  oneLine: "Milestone-based teacher training crowdfunding where Stellar escrow unlocks grants after verified learning outcomes.",
+  users: "public school teachers, alumni donors, education NGOs, parent groups, and local scholarship sponsors",
+  approach: "Outcome-gated learning grant",
+  integration: "Uses Freighter and XLM SAC for donor pledges, Soroban for course milestones, and an x402-style quote endpoint for paid training resources.",
+  contractId: process.env.NEXT_PUBLIC_CONTRACT_ID || "SET_CONTRACT_ID_AFTER_DEPLOY",
+  rpcUrl: process.env.NEXT_PUBLIC_SOROBAN_RPC || "https://soroban-testnet.stellar.org",
+  horizonUrl: process.env.NEXT_PUBLIC_HORIZON_URL || "https://horizon-testnet.stellar.org",
+  network: "testnet",
+  functions: {
+    create: "open_course",
+    fund: "fund_course",
+    attest: "verify_completion",
+    release: "release_grant",
+  },
+};
